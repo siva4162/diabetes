@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>diabetes predicition </title>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+        <body>
+        
+            <h1></h1>
+            <form action= "{{url_for('predict')}}" method="post">
+                <input type="text" name="Pregnancies" placeholder="Pregnancies no of time person got pregent(ex 1,2,4" required="required" />
+                <input type="text" name="Glucose" placeholder="Glucose eg (100,150)" required="required" />
+                <input type="text" name="blood pressure" placeholder=" blood pressure (eg 45,60,70)" required="required" />
+                <input type="text" name="thickness" placeholder="thickness eg(35,25,34)" required="required" />
+                <input type="text" name="insulin" placeholder="insulin eg( 450,250,160)" required="required" /><input type="text" name="thickness" placeholder="thickness eg(35,25,34)" required="required" />
+                <input type="text" name="BMI" placeholder="BMI eg(18-35)" required="required" />
+                <input type=" text" name="dia_pred" placeholder="DiabetesPedigreeFunction eg(0.684,0.234)" required="required" />
+                <input type="text" name="age" placeholder="age eg(35,25,34)" required="required" />
+                <input type="text" name="skin" placeholder="skin eg(1.1224,0.98,0.955)" required="required" />
+                <button type="submit" class="btn btn-primary btn-block btn-larg">Predict</button>
+            </form>    
+             <br>
+             <br>
+             {{prediction_text}}   
+                
+        </body>
+</html>    
+    
